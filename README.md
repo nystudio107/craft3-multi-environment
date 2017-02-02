@@ -45,7 +45,7 @@ CME will also work fine with localized sites as well, you'll just need to adjust
 
 ### Setting it up
 
-1. Copy `config/general.php` and `config/db.php` to your project's `config/` folder
+1. Copy `config/db.php`, `config/general.php` & `config/volumes.php` to your project's `config/` folder
 2. Copy `web/index.php` to your project's `web/` folder
 3. Copy the script `craft` to your project's root (this is the console bootstrap file for Craft)
 4. Copy `example.env.php` to your project's root folder, then duplicate it, and rename the copy `.env.php`
