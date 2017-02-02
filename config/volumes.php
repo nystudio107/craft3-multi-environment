@@ -17,7 +17,7 @@ return [
         'ASSET_HANDLE' => [
             'url' => getenv('CRAFTENV_BASE_URL') . 'ASSET_PATH',
             'path' => getenv('CRAFTENV_BASE_PATH') . 'ASSET_PATH',
-        ]
+        ],
     ],
 
     // Live (production) environment
