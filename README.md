@@ -65,6 +65,36 @@ You will need to create an `.env.php` file for each environment on which your Cr
 
 It's recommended that the `example.env.php` **is** checked into your git repo, so others can use it for a guide when creating their own local `.env.php` file.
 
+### Asset Volumes
+
+Craft 3 does away with the notion of `environmentalVariables`. Instead, to configure things like your `baseUrl` and `basePath` for assets, you do this in the `volumes.php` file:
+
+    // All environments
+    '*' => [
+        'ASSET_HANDLE' => [
+            'url' => getenv('CRAFTENV_BASE_URL') . 'ASSET_PATH',
+            'path' => getenv('CRAFTENV_BASE_PATH') . 'ASSET_PATH',
+        ],
+    ],
+
+Put the Asset Volume handle in `ASSET_HANDLE` key, and put the path to the asset in `ASSET_PATH`.
+
+Since each Asset Volume can have a different `url` and `path`, you'll need to create an array for each Asset Volume that your website uses. Here's an example:
+
+    // All environments
+    '*' => [
+        'siteAssets' => [
+            'url' => getenv('CRAFTENV_BASE_URL') . 'img/site',
+            'path' => getenv('CRAFTENV_BASE_PATH') . 'img/site',
+        ],
+        'blogImages' => [
+            'url' => getenv('CRAFTENV_BASE_URL') . 'img/blog',
+            'path' => getenv('CRAFTENV_BASE_PATH') . 'img/blog',
+        ],
+    ],
+
+This is a config with two Asset Volumes with the handles `siteAssets` and `blogImages`, with the file system & URI paths of `img/site` and `img/blog`, respectively.
+
 ### Local environments
 
 CME suggests the following environments, each of which can have different Craft settings per environment, independent of the private settings defined in `.env.php`:
