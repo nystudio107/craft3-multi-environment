@@ -144,6 +144,7 @@ Inside the `<VirtualHost>` block:
     SetEnv CRAFTENV_DB_SERVER "localhost"
     SetEnv CRAFTENV_DB_USER "REPLACE_ME"
     SetEnv CRAFTENV_DB_PASSWORD "REPLACE_ME"
+    SetEnv CRAFTENV_DB_DATABASE "REPLACE_ME"
     SetEnv CRAFTENV_DB_SCHEMA "public"
     SetEnv CRAFTENV_DB_TABLE_PREFIX ""
     SetEnv CRAFTENV_SITE_URL "REPLACE_ME"
@@ -161,6 +162,7 @@ Inside the `server {}` or `location ~ \.php {}` block or in the `fastcgi_params`
     fastcgi_param CRAFTENV_DB_SERVER "localhost";
     fastcgi_param CRAFTENV_DB_USER "REPLACE_ME";
     fastcgi_param CRAFTENV_DB_PASSWORD "REPLACE_ME";
+    fastcgi_param CRAFTENV_DB_DATABASE "REPLACE_ME";
     fastcgi_param CRAFTENV_DB_SCHEMA "public";
     fastcgi_param CRAFTENV_DB_TABLE_PREFIX "";
     fastcgi_param CRAFTENV_SITE_URL "REPLACE_ME";
