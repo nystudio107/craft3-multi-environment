@@ -19,12 +19,6 @@ return [
         'generateTransformsBeforePageLoad' => true,
         'siteUrl' => getenv('CRAFTENV_SITE_URL'),
         'craftEnv' => CRAFT_ENVIRONMENT,
-
-        // Set the environmental variables
-        'environmentVariables' => [
-            'baseUrl'  => getenv('CRAFTENV_BASE_URL'),
-            'basePath' => getenv('CRAFTENV_BASE_PATH'),
-        ],
     ],
 
     // Live (production) environment
