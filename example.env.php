@@ -47,7 +47,7 @@ $craftenv_vars = [
 	'BASE_URL' => (isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . '/',
 
 	// The base path environmentVariable for Assets; it can be hard-coded as well
-	'BASE_PATH' => realpath(dirname(__FILE__)) . '/public/',
+	'BASE_PATH' => realpath(dirname(__FILE__)) . '/web/',
 ];
 
 // Set all of the .env values, auto-prefixed with `CRAFTENV_`
