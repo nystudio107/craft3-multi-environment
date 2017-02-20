@@ -67,7 +67,7 @@ foreach ($craftEnvVars as $key => $value) {
 }
 
 /**
- * For production environments, this .env.php file can be used, or preferrably,
+ * For production environments, this .env.php file can be used, or preferably,
  * (for security & speed), set the $_ENV variables directly from the server config.
  *
  * Apache - inside the <VirtualHost> block:
