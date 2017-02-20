@@ -21,9 +21,9 @@ if (isset($_SERVER['HTTPS']) && (strcasecmp($_SERVER['HTTPS'], 'on') === 0 || $_
 } else {
     $protocol = "http://";
 }
-// The $craftenv_vars are all auto-prefixed with CRAFTENV_ -- you can add
+// The $craftEnvVars are all auto-prefixed with CRAFTENV_ -- you can add
 // whatever you want here and access them via getenv() using the prefixed name
-$craftenv_vars = [
+$craftEnvVars = [
     // The Craft environment we're running in ('local', 'staging', 'live', etc.).
     'CRAFT_ENVIRONMENT' => 'REPLACE_ME',
 
@@ -62,7 +62,7 @@ $craftenv_vars = [
 ];
 
 // Set all of the .env values, auto-prefixed with `CRAFTENV_`
-foreach ($craftenv_vars as $key => $value) {
+foreach ($craftEnvVars as $key => $value) {
     putenv("CRAFTENV_{$key}={$value}");
 }
 
