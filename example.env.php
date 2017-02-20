@@ -13,6 +13,13 @@
  * usage notes.
  */
 
+// Determine the incoming protocol
+if (isset($_SERVER['HTTPS']) && (strcasecmp($_SERVER['HTTPS'], 'on') === 0 || $_SERVER['HTTPS'] == 1)
+            || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strcasecmp($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') === 0) {
+    $protocol = "https://";
+} else {
+    $protocol = "http://";
+}
 // The $craftenv_vars are all auto-prefixed with CRAFTENV_ -- you can add whatever you want here
 // and access them via getenv() using the prefixed name
 $craftenv_vars = [
@@ -41,11 +48,11 @@ $craftenv_vars = [
     'DB_TABLE_PREFIX' => '',
 
     // The site url to use; it can be hard-coded as well
-    'SITE_URL' => (isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . '/',
+    'SITE_URL' => $protocol . $_SERVER['HTTP_HOST'] . '/',
 
     // The base url environmentVariable to use for Assets; it can be hard-coded as well
     // You will also need to configure `config/volumes.php` for your Asset Volumes
-    'BASE_URL' => (isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . '/',
+    'BASE_URL' => $protocol . $_SERVER['HTTP_HOST'] . '/',
 
     // The base path environmentVariable for Assets; it can be hard-coded as well
     // You will also need to configure `config/volumes.php` for your Asset Volumes
