@@ -15,13 +15,14 @@
 
 // Determine the incoming protocol
 if (isset($_SERVER['HTTPS']) && (strcasecmp($_SERVER['HTTPS'], 'on') === 0 || $_SERVER['HTTPS'] == 1)
-            || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strcasecmp($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') === 0) {
+    || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strcasecmp($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') === 0
+) {
     $protocol = "https://";
 } else {
     $protocol = "http://";
 }
-// The $craftenv_vars are all auto-prefixed with CRAFTENV_ -- you can add whatever you want here
-// and access them via getenv() using the prefixed name
+// The $craftenv_vars are all auto-prefixed with CRAFTENV_ -- you can add
+// whatever you want here and access them via getenv() using the prefixed name
 $craftenv_vars = [
     // The Craft environment we're running in ('local', 'staging', 'live', etc.).
     'CRAFT_ENVIRONMENT' => 'REPLACE_ME',
@@ -44,7 +45,8 @@ $craftenv_vars = [
     // The database schema that will be used (PostgreSQL only)
     'DB_SCHEMA' => 'public',
 
-    // The prefix that should be added to generated table names (only necessary if multiple things are sharing the same database)
+    // The prefix that should be added to generated table names (only necessary
+    // if multiple things are sharing the same database)
     'DB_TABLE_PREFIX' => '',
 
     // The site url to use; it can be hard-coded as well
