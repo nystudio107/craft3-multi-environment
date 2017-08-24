@@ -121,9 +121,9 @@ You should also update the `example.env.php` to include any settings you add, fo
 
 ### Accessing the settings in `general.php`
 
-You can access any variables defined in the `general.php` file in Twig via `{{ craft.config }}`.  e.g.:
+You can access any variables defined in the `general.php` file in Twig via `{{ craft.app.config.general }}`.  e.g.:
 
-    {% if craft.config.craftEnv == "local" %}
+    {% if craft.app.config.general.craftEnv == "local" %}
     {% endif %}
 
 ### Production via webserver config
