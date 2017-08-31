@@ -19,6 +19,10 @@ return [
         'generateTransformsBeforePageLoad' => true,
         'siteUrl' => getenv('CRAFTENV_SITE_URL'),
         'craftEnv' => CRAFT_ENVIRONMENT,
+        'defaultSearchTermOptions' => array(
+            'subLeft' => true,
+            'subRight' => true,
+        ),
     ],
 
     // Live (production) environment
