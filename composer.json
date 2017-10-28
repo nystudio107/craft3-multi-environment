@@ -1,0 +1,21 @@
+{
+    "name": "nystudio107/craft3-multi-environment",
+    "description": "Efficient and flexible multi-environment config for Craft CMS",
+    "version": "1.0.3",
+    "keywords": [
+        "craft",
+        "craftcms",
+        "multi-environment"
+    ],
+    "support": {
+        "docs": "https://github.com/nystudio107/craft3-multi-environment/blob/master/README.md",
+        "issues": "https://github.com/nystudio107/craft3-multi-environment/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+          "name": "nystudio107",
+          "homepage": "https://nystudio107.com/"
+        }
+    ]
+}

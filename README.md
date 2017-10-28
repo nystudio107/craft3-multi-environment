@@ -149,6 +149,7 @@ Inside the `<VirtualHost>` block:
     SetEnv CRAFTENV_DB_DATABASE "REPLACE_ME"
     SetEnv CRAFTENV_DB_SCHEMA "public"
     SetEnv CRAFTENV_DB_TABLE_PREFIX ""
+    SetEnv CRAFTENV_SECURITY_KEY "REPLACE_ME"
     SetEnv CRAFTENV_SITE_URL "REPLACE_ME"
     SetEnv CRAFTENV_BASE_URL "REPLACE_ME"
     SetEnv CRAFTENV_BASE_PATH "REPLACE_ME"
@@ -167,6 +168,7 @@ Inside the `server {}` or `location ~ \.php {}` block or in the `fastcgi_params`
     fastcgi_param CRAFTENV_DB_DATABASE "REPLACE_ME";
     fastcgi_param CRAFTENV_DB_SCHEMA "public";
     fastcgi_param CRAFTENV_DB_TABLE_PREFIX "";
+    fastcgi_param CRAFTENV_SECURITY_KEY "REPLACE_ME";
     fastcgi_param CRAFTENV_SITE_URL "REPLACE_ME";
     fastcgi_param CRAFTENV_BASE_URL "REPLACE_ME";
     fastcgi_param CRAFTENV_BASE_PATH "REPLACE_ME";

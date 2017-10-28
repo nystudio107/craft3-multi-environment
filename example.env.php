@@ -49,6 +49,10 @@ $craftEnvVars = [
     // if multiple things are sharing the same database)
     'DB_TABLE_PREFIX' => '',
 
+    // The secure key Craft will use for hashing and encrypting data, see:
+    // https://craftcms.com/docs/config-settings#validationKey
+    'SECURITY_KEY' => 'REPLACE_ME',
+
     // The site url to use; it can be hard-coded as well
     'SITE_URL' => $protocol . $_SERVER['HTTP_HOST'] . '/',
 
@@ -80,6 +84,7 @@ SetEnv CRAFTENV_DB_PASSWORD "REPLACE_ME"
 SetEnv CRAFTENV_DB_DATABASE "REPLACE_ME"
 SetEnv CRAFTENV_DB_SCHEMA "public"
 SetEnv CRAFTENV_DB_TABLE_PREFIX ""
+SetEnv CRAFTENV_SECURITY_KEY "REPLACE_ME"
 SetEnv CRAFTENV_SITE_URL "REPLACE_ME"
 SetEnv CRAFTENV_BASE_URL "REPLACE_ME"
 SetEnv CRAFTENV_BASE_PATH "REPLACE_ME"
@@ -94,6 +99,7 @@ fastcgi_param CRAFTENV_DB_PASSWORD "REPLACE_ME";
 fastcgi_param CRAFTENV_DB_DATABASE "REPLACE_ME";
 fastcgi_param CRAFTENV_DB_SCHEMA "public";
 fastcgi_param CRAFTENV_DB_TABLE_PREFIX "";
+fastcgi_param CRAFTENV_SECURITY_KEY "REPLACE_ME";
 fastcgi_param CRAFTENV_SITE_URL "REPLACE_ME";
 fastcgi_param CRAFTENV_BASE_URL "REPLACE_ME";
 fastcgi_param CRAFTENV_BASE_PATH "REPLACE_ME";

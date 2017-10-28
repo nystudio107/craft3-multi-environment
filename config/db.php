@@ -1,4 +1,14 @@
 <?php
+/**
+ * $_ENV constants are loaded by craft3-multi-environment from .env.php via web/index.php
+ *
+ * @author    nystudio107
+ * @copyright Copyright (c) 2017 nystudio107
+ * @link      https://nystudio107.com/
+ * @package   craft3-multi-environment
+ * @since     1.0.3
+ * @license   MIT
+ */
 
 /**
  * Database Configuration
@@ -7,7 +17,6 @@
  * You can see a list of the default settings in src/config/defaults/db.php
  */
 
-// $_ENV constants are loaded by craft3-multi-environment from .env.php via web/index.php
 return [
 
     // All environments

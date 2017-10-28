@@ -1,5 +1,14 @@
 # Craft3-Multi-Environment Changelog
 
+## 1.0.3 - 2017.10.28
+### Changed
+* Added `CRAFTENV_SECURITY_KEY` to `example.env.php`
+* Added `securityKey` defaults to `general.php`
+* Added `defaultSearchTermOptions` defaults to `general.php`
+* Added `isSystemOn` defaults to `general.php`
+* Added `backupDbOnUpdate` defaults to `general.php`
+* Added Composer support
+
 ## 1.0.2 - 2017.07.20
 ### Changed
 * Fixed the `forge-example` to used `fastcgi_param` instead of `SetEnv` (which is for Apache)
