@@ -54,14 +54,17 @@ CME will also work fine with localized sites as well, you'll just need to adjust
 5. Edit the `.env.php` file, replacing instances of `REPLACE_ME` with your appropriate settings
 6. Add `/.env.php` to your `.gitignore` file
 
-The `web/index.php` file included with CME just has the following that replaces the `Dotenv` lines (it is otherwise unchanged):
+The `web/index.php` file included with CME just has the following that supplants the `Dotenv` lines (it is otherwise unchanged):
 
     // Load the local craft3-multi-environment
-    if (file_exists($root . DIRECTORY_SEPARATOR . '.env.php'))
-        require_once $root . DIRECTORY_SEPARATOR . '.env.php';
+    if (file_exists(CRAFT_BASE_PATH . DIRECTORY_SEPARATOR . '.env.php')) {
+        require_once CRAFT_BASE_PATH . DIRECTORY_SEPARATOR . '.env.php';
+    }
+    
     // Default environment
-    if (!defined('CRAFT_ENVIRONMENT'))
+    if (!defined('CRAFT_ENVIRONMENT')) {
         define('CRAFT_ENVIRONMENT', getenv('CRAFTENV_CRAFT_ENVIRONMENT'));
+    }
 
 You will need to create an `.env.php` file for each environment on which your Craft CMS project will be used (other team member's local dev, staging, production, etc.), but the `db.php`, `general.php`, and `index.php` are the same on all environments.
 
