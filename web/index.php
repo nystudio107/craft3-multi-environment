@@ -27,12 +27,14 @@ if (file_exists(CRAFT_BASE_PATH.'/.env')) {
 }
 
 // Load the local craft3-multi-environment
-if (file_exists($root . DIRECTORY_SEPARATOR . '.env.php'))
+if (file_exists($root . DIRECTORY_SEPARATOR . '.env.php')) {
     require_once $root . DIRECTORY_SEPARATOR . '.env.php';
+}
 
 // Default environment
-if (!defined('CRAFT_ENVIRONMENT'))
+if (!defined('CRAFT_ENVIRONMENT')) {
     define('CRAFT_ENVIRONMENT', getenv('CRAFTENV_CRAFT_ENVIRONMENT'));
+}
 
 // Load and run Craft
 $app = require CRAFT_VENDOR_PATH.'/craftcms/cms/bootstrap/web.php';
