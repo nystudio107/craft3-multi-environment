@@ -34,6 +34,9 @@ return [
             'subLeft' => true,
             'subRight' => true,
         ),
+        'baseUrl' => getenv('CRAFTENV_BASE_URL'),
+        'basePath' => getenv('CRAFTENV_BASE_PATH'),
+        'staticAssetsVersion' => 1,
     ],
 
     // Live (production) environment
@@ -61,5 +64,6 @@ return [
         'backupOnUpdate' => true,
         'enableTemplateCaching' => false,
         'allowAutoUpdates' => true,
+        'staticAssetsVersion' => time(),
     ],
 ];
