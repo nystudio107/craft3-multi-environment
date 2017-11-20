@@ -1,7 +1,7 @@
 {
     "name": "nystudio107/craft3-multi-environment",
     "description": "Efficient and flexible multi-environment config for Craft CMS",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "keywords": [
         "craft",
         "craftcms",
