@@ -3,6 +3,7 @@
 ## 1.0.4 - 2017.11.20
 ### Added
 * Added `CRAFTENV_DB_PORT` environmental variable
+* Added `staticAssetsVersion`, `baseUrl`, and `basePath` to `general.php`
 
 ### Changed
 * Changed the default values to unique, replaceable placeholder strings
