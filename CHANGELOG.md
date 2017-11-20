@@ -1,7 +1,14 @@
-# Craft3-Multi-Environment Changelog
+# Craft 3 Multi-Environment Changelog
+
+## 1.0.4 - 2017.11.20
+### Added
+* Added `CRAFTENV_DB_PORT` environmental variable
+
+### Changed
+* Changed the default values to unique, replaceable placeholder strings
 
 ## 1.0.3 - 2017.10.28
-### Changed
+### Added
 * Added `CRAFTENV_SECURITY_KEY` to `example.env.php`
 * Added `securityKey` defaults to `general.php`
 * Added `defaultSearchTermOptions` defaults to `general.php`
