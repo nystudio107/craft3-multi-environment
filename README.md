@@ -6,7 +6,7 @@ Related: [Craft-Multi-Environment for Craft 2.x](https://github.com/nystudio107/
 
 ## Overview
 
-[Multi-Environment Configs](https://craftcms.com/docs/multi-environment-configs) let you easily run a Craft CMS project in local dev, staging, and production.  They allow different people to work in different environments without painful setup or coordination. You can read a more in-depth discussion of it in the M[ulti-Environment Config for Craft CMS](https://nystudio107.com/blog/multi-environment-config-for-craft-cms) article.
+[Multi-Environment Configs](https://craftcms.com/docs/multi-environment-configs) let you easily run a Craft CMS project in local dev, staging, and production.  They allow different people to work in different environments without painful setup or coordination. You can read a more in-depth discussion of it in the [Multi-Environment Config for Craft CMS](https://nystudio107.com/blog/multi-environment-config-for-craft-cms) article.
 
 ### Why another multi-environment config?
 
@@ -144,18 +144,19 @@ This is entirely optional, but if you're interested in doing it, here's how.
 
 Inside the `<VirtualHost>` block:
 
-    SetEnv CRAFTENV_CRAFT_ENVIRONMENT "REPLACE_ME"
-    SetEnv CRAFTENV_DB_DRIVER "mysql"
-    SetEnv CRAFTENV_DB_SERVER "localhost"
-    SetEnv CRAFTENV_DB_USER "REPLACE_ME"
-    SetEnv CRAFTENV_DB_PASSWORD "REPLACE_ME"
-    SetEnv CRAFTENV_DB_DATABASE "REPLACE_ME"
-    SetEnv CRAFTENV_DB_SCHEMA "public"
-    SetEnv CRAFTENV_DB_TABLE_PREFIX ""
-    SetEnv CRAFTENV_SECURITY_KEY "REPLACE_ME"
-    SetEnv CRAFTENV_SITE_URL "REPLACE_ME"
-    SetEnv CRAFTENV_BASE_URL "REPLACE_ME"
-    SetEnv CRAFTENV_BASE_PATH "REPLACE_ME"
+    SetEnv CRAFTENV_CRAFT_ENVIRONMENT "REPLACE_ME_CRAFT_ENVIRONMENT"
+    SetEnv CRAFTENV_DB_DRIVER "REPLACE_ME_DB_DRIVER"
+    SetEnv CRAFTENV_DB_SERVER "REPLACE_ME_DB_SERVER"
+    SetEnv CRAFTENV_DB_USER "REPLACE_ME_DB_USER"
+    SetEnv CRAFTENV_DB_PASSWORD "REPLACE_ME_DB_PASSWORD"
+    SetEnv CRAFTENV_DB_DATABASE "REPLACE_ME_DB_DATABASE"
+    SetEnv CRAFTENV_DB_SCHEMA "REPLACE_ME_DB_SCHEMA"
+    SetEnv CRAFTENV_DB_TABLE_PREFIX "REPLACE_ME_DB_TABLE_PREFIX"
+    SetEnv CRAFTENV_DB_PORT "REPLACE_ME_DB_PORT"
+    SetEnv CRAFTENV_SECURITY_KEY "REPLACE_ME_SECURITY_KEY"
+    SetEnv CRAFTENV_SITE_URL "REPLACE_ME_SITE_URL"
+    SetEnv CRAFTENV_BASE_URL "REPLACE_ME_BASE_URL"
+    SetEnv CRAFTENV_BASE_PATH "REPLACE_ME_BASE_PATH"
 
 (...and any other custom config settings you've added)
 
@@ -163,18 +164,19 @@ Inside the `<VirtualHost>` block:
 
 Inside the `server {}` or `location ~ \.php {}` block or in the `fastcgi_params` file:
 
-    fastcgi_param CRAFTENV_CRAFT_ENVIRONMENT "REPLACE_ME";
-    fastcgi_param CRAFTENV_DB_DRIVER "mysql";
-    fastcgi_param CRAFTENV_DB_SERVER "localhost";
-    fastcgi_param CRAFTENV_DB_USER "REPLACE_ME";
-    fastcgi_param CRAFTENV_DB_PASSWORD "REPLACE_ME";
-    fastcgi_param CRAFTENV_DB_DATABASE "REPLACE_ME";
-    fastcgi_param CRAFTENV_DB_SCHEMA "public";
-    fastcgi_param CRAFTENV_DB_TABLE_PREFIX "";
-    fastcgi_param CRAFTENV_SECURITY_KEY "REPLACE_ME";
-    fastcgi_param CRAFTENV_SITE_URL "REPLACE_ME";
-    fastcgi_param CRAFTENV_BASE_URL "REPLACE_ME";
-    fastcgi_param CRAFTENV_BASE_PATH "REPLACE_ME";
+    fastcgi_param CRAFTENV_CRAFT_ENVIRONMENT "REPLACE_ME_CRAFT_ENVIRONMENT";
+    fastcgi_param CRAFTENV_DB_DRIVER "REPLACE_ME_DB_DRIVER";
+    fastcgi_param CRAFTENV_DB_SERVER "REPLACE_ME_DB_SERVER";
+    fastcgi_param CRAFTENV_DB_USER "REPLACE_ME_DB_USER";
+    fastcgi_param CRAFTENV_DB_PASSWORD "REPLACE_ME_DB_PASSWORD";
+    fastcgi_param CRAFTENV_DB_DATABASE "REPLACE_ME_DB_DATABASE";
+    fastcgi_param CRAFTENV_DB_SCHEMA "REPLACE_ME_DB_SCHEMA";
+    fastcgi_param CRAFTENV_DB_TABLE_PREFIX "REPLACE_ME_DB_TABLE_PREFIX";
+    fastcgi_param CRAFTENV_DB_PORT "REPLACE_ME_DB_PORT";
+    fastcgi_param CRAFTENV_SECURITY_KEY "REPLACE_ME_SECURITY_KEY";
+    fastcgi_param CRAFTENV_SITE_URL "REPLACE_ME_SITE_URL";
+    fastcgi_param CRAFTENV_BASE_URL "REPLACE_ME_BASE_URL";
+    fastcgi_param CRAFTENV_BASE_PATH "REPLACE_ME_BASE_PATH";
 
 (...and any other custom config settings you've added)
 

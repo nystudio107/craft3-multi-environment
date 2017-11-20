@@ -25,33 +25,36 @@ if (isset($_SERVER['HTTPS']) && (strcasecmp($_SERVER['HTTPS'], 'on') === 0 || $_
 // whatever you want here and access them via getenv() using the prefixed name
 $craftEnvVars = [
     // The Craft environment we're running in ('local', 'staging', 'live', etc.).
-    'CRAFT_ENVIRONMENT' => 'REPLACE_ME',
+    'CRAFT_ENVIRONMENT' => 'REPLACE_ME_CRAFT_ENVIRONMENT',
 
     // The database driver that will used ('mysql' or 'pgsql')
-    'DB_DRIVER' => 'mysql',
+    'DB_DRIVER' => 'REPLACE_ME_DB_DRIVER',
 
     // The database server name or IP address (usually this is 'localhost' or '127.0.0.1')
-    'DB_SERVER' => 'localhost',
+    'DB_SERVER' => 'REPLACE_ME_DB_SERVER',
 
     // The database username to connect with
-    'DB_USER' => 'REPLACE_ME',
+    'DB_USER' => 'REPLACE_ME_DB_USER',
 
     // The database password to connect with
-    'DB_PASSWORD' => 'REPLACE_ME',
+    'DB_PASSWORD' => 'REPLACE_ME_DB_PASSWORD',
 
     // The name of the database to select
-    'DB_DATABASE' => 'REPLACE_ME',
+    'DB_DATABASE' => 'REPLACE_ME_DB_DATABASE',
 
-    // The database schema that will be used (PostgreSQL only)
-    'DB_SCHEMA' => 'public',
+    // The database schema that will be used (PostgreSQL only, usually 'public')
+    'DB_SCHEMA' => 'REPLACE_ME_DB_SCHEMA',
 
-    // The prefix that should be added to generated table names (only necessary
+    // The prefix that should be added to generated table names (usually '', it's only necessary
     // if multiple things are sharing the same database)
-    'DB_TABLE_PREFIX' => '',
+    'DB_TABLE_PREFIX' => 'REPLACE_ME_DB_TABLE_PREFIX',
+
+    // The port to connect to the database with. Default ports are 3306 for MySQL and 5432 for PostgreSQL.
+    'DB_PORT' => 'REPLACE_ME_DB_PORT',
 
     // The secure key Craft will use for hashing and encrypting data, see:
     // https://craftcms.com/docs/config-settings#validationKey
-    'SECURITY_KEY' => 'REPLACE_ME',
+    'SECURITY_KEY' => 'REPLACE_ME_SECURITY_KEY',
 
     // The site url to use; it can be hard-coded as well
     'SITE_URL' => $protocol . $_SERVER['HTTP_HOST'] . '/',
@@ -76,32 +79,34 @@ foreach ($craftEnvVars as $key => $value) {
  *
  * Apache - inside the <VirtualHost> block:
 
-SetEnv CRAFTENV_CRAFT_ENVIRONMENT "REPLACE_ME"
-SetEnv CRAFTENV_DB_DRIVER "mysql"
-SetEnv CRAFTENV_DB_SERVER "localhost"
-SetEnv CRAFTENV_DB_USER "REPLACE_ME"
-SetEnv CRAFTENV_DB_PASSWORD "REPLACE_ME"
-SetEnv CRAFTENV_DB_DATABASE "REPLACE_ME"
-SetEnv CRAFTENV_DB_SCHEMA "public"
-SetEnv CRAFTENV_DB_TABLE_PREFIX ""
-SetEnv CRAFTENV_SECURITY_KEY "REPLACE_ME"
-SetEnv CRAFTENV_SITE_URL "REPLACE_ME"
-SetEnv CRAFTENV_BASE_URL "REPLACE_ME"
-SetEnv CRAFTENV_BASE_PATH "REPLACE_ME"
+SetEnv CRAFTENV_CRAFT_ENVIRONMENT "REPLACE_ME_CRAFT_ENVIRONMENT"
+SetEnv CRAFTENV_DB_DRIVER "REPLACE_ME_DB_DRIVER"
+SetEnv CRAFTENV_DB_SERVER "REPLACE_ME_DB_SERVER"
+SetEnv CRAFTENV_DB_USER "REPLACE_ME_DB_USER"
+SetEnv CRAFTENV_DB_PASSWORD "REPLACE_ME_DB_PASSWORD"
+SetEnv CRAFTENV_DB_DATABASE "REPLACE_ME_DB_DATABASE"
+SetEnv CRAFTENV_DB_SCHEMA "REPLACE_ME_DB_SCHEMA"
+SetEnv CRAFTENV_DB_TABLE_PREFIX "REPLACE_ME_DB_TABLE_PREFIX"
+SetEnv CRAFTENV_DB_PORT "REPLACE_ME_DB_PORT"
+SetEnv CRAFTENV_SECURITY_KEY "REPLACE_ME_SECURITY_KEY"
+SetEnv CRAFTENV_SITE_URL "REPLACE_ME_SITE_URL"
+SetEnv CRAFTENV_BASE_URL "REPLACE_ME_BASE_URL"
+SetEnv CRAFTENV_BASE_PATH "REPLACE_ME_BASE_PATH"
 
  * Nginx - inside the server {} or location ~ \.php$ {} block:
 
-fastcgi_param CRAFTENV_CRAFT_ENVIRONMENT "REPLACE_ME";
-fastcgi_param CRAFTENV_DB_DRIVER "mysql";
-fastcgi_param CRAFTENV_DB_SERVER "localhost";
-fastcgi_param CRAFTENV_DB_USER "REPLACE_ME";
-fastcgi_param CRAFTENV_DB_PASSWORD "REPLACE_ME";
-fastcgi_param CRAFTENV_DB_DATABASE "REPLACE_ME";
-fastcgi_param CRAFTENV_DB_SCHEMA "public";
-fastcgi_param CRAFTENV_DB_TABLE_PREFIX "";
-fastcgi_param CRAFTENV_SECURITY_KEY "REPLACE_ME";
-fastcgi_param CRAFTENV_SITE_URL "REPLACE_ME";
-fastcgi_param CRAFTENV_BASE_URL "REPLACE_ME";
-fastcgi_param CRAFTENV_BASE_PATH "REPLACE_ME";
+fastcgi_param CRAFTENV_CRAFT_ENVIRONMENT "REPLACE_ME_CRAFT_ENVIRONMENT";
+fastcgi_param CRAFTENV_DB_DRIVER "REPLACE_ME_DB_DRIVER";
+fastcgi_param CRAFTENV_DB_SERVER "REPLACE_ME_DB_SERVER";
+fastcgi_param CRAFTENV_DB_USER "REPLACE_ME_DB_USER";
+fastcgi_param CRAFTENV_DB_PASSWORD "REPLACE_ME_DB_PASSWORD";
+fastcgi_param CRAFTENV_DB_DATABASE "REPLACE_ME_DB_DATABASE";
+fastcgi_param CRAFTENV_DB_SCHEMA "REPLACE_ME_DB_SCHEMA";
+fastcgi_param CRAFTENV_DB_TABLE_PREFIX "REPLACE_ME_DB_TABLE_PREFIX";
+fastcgi_param CRAFTENV_DB_PORT "REPLACE_ME_DB_PORT";
+fastcgi_param CRAFTENV_SECURITY_KEY "REPLACE_ME_SECURITY_KEY";
+fastcgi_param CRAFTENV_SITE_URL "REPLACE_ME_SITE_URL";
+fastcgi_param CRAFTENV_BASE_URL "REPLACE_ME_BASE_URL";
+fastcgi_param CRAFTENV_BASE_PATH "REPLACE_ME_BASE_PATH";
 
  */

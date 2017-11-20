@@ -28,6 +28,7 @@ return [
         'database' => getenv('CRAFTENV_DB_DATABASE'),
         'schema' => getenv('CRAFTENV_DB_SCHEMA'),
         'tablePrefix' => getenv('CRAFTENV_DB_TABLE_PREFIX'),
+        'port' => getenv('CRAFTENV_DB_PORT'),
     ],
 
     // Live (production) environment
