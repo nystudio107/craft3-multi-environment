@@ -17,6 +17,8 @@ There are a number of good approaches to implementing a multi-environment config
 
 Craft-Multi-Environment (CME) is my attempt to create something that finds a middle-ground between the two approaches.
 
+You can read more about it in the [Setting up a New Craft 3 CMS Project](https://nystudio107.com/blog/setting-up-a-craft-cms-3-project) article. You can also alternatively have Craft 3 Multi-Environment installed & configured for you via the [nystudio107/craft](https://github.com/nystudio107/craft) project package.
+
 ### How does it work?
 
 CME works by including a `.env.php` file (which is never checked into git) via the Craft `index.php` file that is loaded for every non-static request.
