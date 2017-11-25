@@ -23,7 +23,7 @@ if (isset($_SERVER['HTTPS']) && (strcasecmp($_SERVER['HTTPS'], 'on') === 0 || $_
 } else {
     $protocol = "http://";
 }
-// Determine the server
+// Determine the server hostname
 $httpHost = $_SERVER['HTTP_HOST'] ?? '';
 // The $craftEnvVars are all auto-prefixed with CRAFTENV_ -- you can add
 // whatever you want here and access them via getenv() using the prefixed name
