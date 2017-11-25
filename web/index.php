@@ -1,12 +1,13 @@
 <?php
 /**
- * Efficient and flexible multi-environment config for Craft CMS Edit
+ * Craft 3 Multi-Environment
+ * Efficient and flexible multi-environment config for Craft 3 CMS
  *
  * @author    nystudio107
  * @copyright Copyright (c) 2017 nystudio107
  * @link      https://nystudio107.com/
  * @package   craft3-multi-environment
- * @since     1.0.3
+ * @since     1.0.5
  * @license   MIT
  */
 

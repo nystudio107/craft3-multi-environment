@@ -1,5 +1,11 @@
 # Craft 3 Multi-Environment Changelog
 
+## 1.0.5 - 2017.11.25
+### Changed
+* Refactored custom `general.php` settings into the `custom` key
+* Handle empty `$_SERVER['HTTP_HOST']` in the `.env.php`
+* Config cleanup
+
 ## 1.0.4 - 2017.11.20
 ### Added
 * Added `CRAFTENV_DB_PORT` environmental variable

@@ -1,11 +1,13 @@
 <?php
 /**
- * Craft-Multi-Environment (CMS)
+ * Craft 3 Multi-Environment
+ * Efficient and flexible multi-environment config for Craft 3 CMS
+ *
  * @author    nystudio107
  * @copyright Copyright (c) 2017 nystudio107
  * @link      https://nystudio107.com/
  * @package   craft3-multi-environment
- * @since     1.0.0
+ * @since     1.0.5
  * @license   MIT
  *
  * This file should be renamed to '.env.php' and it should reside in your root
@@ -21,6 +23,8 @@ if (isset($_SERVER['HTTPS']) && (strcasecmp($_SERVER['HTTPS'], 'on') === 0 || $_
 } else {
     $protocol = "http://";
 }
+// Determine the server
+$httpHost = $_SERVER['HTTP_HOST'] ?? '';
 // The $craftEnvVars are all auto-prefixed with CRAFTENV_ -- you can add
 // whatever you want here and access them via getenv() using the prefixed name
 $craftEnvVars = [
@@ -57,11 +61,11 @@ $craftEnvVars = [
     'SECURITY_KEY' => 'REPLACE_ME_SECURITY_KEY',
 
     // The site url to use; it can be hard-coded as well
-    'SITE_URL' => $protocol . $_SERVER['HTTP_HOST'] . '/',
+    'SITE_URL' => $protocol . $httpHost . '/',
 
     // The base url environmentVariable to use for Assets; it can be hard-coded as well
     // You will also need to configure `config/volumes.php` for your Asset Volumes
-    'BASE_URL' => $protocol . $_SERVER['HTTP_HOST'] . '/',
+    'BASE_URL' => $protocol . $httpHost . '/',
 
     // The base path environmentVariable for Assets; it can be hard-coded as well
     // You will also need to configure `config/volumes.php` for your Asset Volumes
