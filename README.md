@@ -131,6 +131,8 @@ You can access any variables defined in the `general.php` file in Twig via `{{ c
     {% if craft.app.config.general.custom.craftEnv == "local" %}
     {% endif %}
 
+The `custom` sub-array in the config setup is for any non-Craft defined config settings that you might want to include in `general.php`. Since Craft does a recursive merge on the config settings, you can change just the config settings you need on a per-environment basis.
+
 ### Production via webserver config
 
 It's perfectly fine to use CME as discussed above in a production environment.  However, if you want an added measure of security and performance, you can set up your webserver to set the same globally accessible settings via webserver config.
