@@ -72,15 +72,48 @@ You will need to create an `.env.php` file for each environment on which your Cr
 
 It's recommended that the `example.env.php` **is** checked into your git repo, so others can use it for a guide when creating their own local `.env.php` file.
 
+### Aliases and environmentVariables
+
+Craft 3 does away with the notion of `environmentVariables`. If you have custom variables that you wish to set in a multi-environment way, put them in the `custom` array in `general.php`:
+
+    // Custom site-specific config settings
+    'custom' => [
+        'basePath' => getenv('CRAFTENV_BASE_PATH'),
+        'baseUrl' => getenv('CRAFTENV_BASE_URL'),
+        'craftEnv' => CRAFT_ENVIRONMENT,
+        'staticAssetsVersion' => 1,
+    ]
+
+The `custom` sub-array in the config setup is for any non-Craft defined config settings that you might want to include in `general.php`. Since Craft does a recursive merge on the config settings, you can change just the config settings you need on a per-environment basis.
+
+You can access these in your templates via `craft.config.general.custom.SETTING`.
+
+For things like your `baseUrl` and `basePath` for assets, you can set [aliases](http://www.yiiframework.com/doc-2.0/guide-concept-aliases.html) in your `general.php`:
+
+    // Aliases parsed in sites’ settings, volumes’ settings, and Local volumes’ settings
+    'aliases' => [
+        '@basePath' => getenv('CRAFTENV_BASE_PATH'),
+        '@baseUrl' => getenv('CRAFTENV_BASE_URL'),
+    ],
+
+While this may seem to be duplicating what is in the `custom` array, aliases can be resolved in AdminCP settings like Asset Volumes, whereas settings in the `custom` array cannot.
+
+There are also several preset aliases that you might find useful:
+
+* `@web` - the base URL of the current request
+* `@webroot` - the web root directory of the current request. It is determined based on the directory containing the entry script 
+
 ### Asset Volumes
 
-Craft 3 does away with the notion of `environmentalVariables`. Instead, to configure things like your `baseUrl` and `basePath` for assets, you do this in the `volumes.php` file:
+These aliases can be used in sites’ Base URL settings, volumes’ Base URL settings, and Local volumes’ File System Path settings in the AdminCP.
+
+They can also be used in the `volumes.php` file:
 
     // All environments
     '*' => [
         'ASSET_HANDLE' => [
-            'url' => getenv('CRAFTENV_BASE_URL') . 'ASSET_PATH',
-            'path' => getenv('CRAFTENV_BASE_PATH') . 'ASSET_PATH',
+            'path' => '@basePath/ASSET_PATH',
+            'url' => '@baseUrl/ASSET_PATH',
         ],
     ],
 
@@ -91,12 +124,12 @@ Since each Asset Volume can have a different `url` and `path`, you'll need to cr
     // All environments
     '*' => [
         'siteAssets' => [
-            'url' => getenv('CRAFTENV_BASE_URL') . 'img/site',
-            'path' => getenv('CRAFTENV_BASE_PATH') . 'img/site',
+            'url' => '@baseUrl/img/site',
+            'path' => '@basePath/img/site',
         ],
         'blogImages' => [
-            'url' => getenv('CRAFTENV_BASE_URL') . 'img/blog',
-            'path' => getenv('CRAFTENV_BASE_PATH') . 'img/blog',
+            'url' => '@baseUrl/img/blog',
+            'path' => '@basePath/img/blog',
         ],
     ],
 
