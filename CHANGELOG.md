@@ -1,5 +1,13 @@
 # Craft 3 Multi-Environment Changelog
 
+## 1.0.6 - 2018.01.20
+### Added
+* Added `aliases` to `general.php` and `volumes.php`
+* Added documentation on aliases to `README.md`
+
+### Changed
+* Changed `allowAutoUpdates` => `allowUpdates` in `general.php`
+
 ## 1.0.5 - 2017.11.25
 ### Changed
 * Refactored custom `general.php` settings into the `custom` key
