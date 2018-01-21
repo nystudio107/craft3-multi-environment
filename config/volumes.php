@@ -31,8 +31,8 @@ return [
     // All environments
     '*' => [
         'ASSET_HANDLE' => [
-            'path' => getenv('CRAFTENV_BASE_PATH') . 'ASSET_PATH',
-            'url' => getenv('CRAFTENV_BASE_URL') . 'ASSET_PATH',
+            'path' => '@basePath/ASSET_PATH',
+            'url' => '@baseUrl/ASSET_PATH',
         ],
     ],
 

@@ -38,6 +38,11 @@ return [
         'siteUrl' => getenv('CRAFTENV_SITE_URL'),
         'useEmailAsUsername' => true,
         'usePathInfo' => true,
+        // Aliases parsed in sites’ settings, volumes’ settings, and Local volumes’ settings
+        'aliases' => [
+            '@basePath' => getenv('CRAFTENV_BASE_PATH'),
+            '@baseUrl' => getenv('CRAFTENV_BASE_URL'),
+        ],
         // Custom site-specific config settings
         'custom' => [
             'basePath' => getenv('CRAFTENV_BASE_PATH'),
@@ -50,11 +55,14 @@ return [
     // Live (production) environment
     'live' => [
         // Craft defined config settings
-        'allowAutoUpdates' => false,
+        'allowUpdates' => false,
         'backupOnUpdate' => false,
         'devMode' => false,
         'enableTemplateCaching' => true,
         'isSystemOn' => true,
+        // Aliases parsed in sites’ settings, volumes’ settings, and Local volumes’ settings
+        'aliases' => [
+        ],
         // Custom site-specific config settings
         'custom' => [
         ]
@@ -63,11 +71,14 @@ return [
     // Staging (pre-production) environment
     'staging' => [
         // Craft defined config settings
-        'allowAutoUpdates' => false,
+        'allowUpdates' => false,
         'backupOnUpdate' => false,
         'devMode' => false,
         'enableTemplateCaching' => true,
         'isSystemOn' => false,
+        // Aliases parsed in sites’ settings, volumes’ settings, and Local volumes’ settings
+        'aliases' => [
+        ],
         // Custom site-specific config settings
         'custom' => [
         ]
@@ -76,11 +87,14 @@ return [
     // Local (development) environment
     'local' => [
         // Craft defined config settings
-        'allowAutoUpdates' => true,
+        'allowUpdates' => true,
         'backupOnUpdate' => true,
         'devMode' => true,
         'enableTemplateCaching' => false,
         'isSystemOn' => true,
+        // Aliases parsed in sites’ settings, volumes’ settings, and Local volumes’ settings
+        'aliases' => [
+        ],
         // Custom site-specific config settings
         'custom' => [
             'staticAssetsVersion' => time(),
