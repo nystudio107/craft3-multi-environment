@@ -1,5 +1,10 @@
 # Craft 3 Multi-Environment Changelog
 
+## 1.0.7 - 2018.01.25
+### Changed
+* Deprecated `craft.config.general.custom.baseUrl` and `craft.config.general.custom.basePath` in favor of `alias('@baseUrl')` and `alias('@basePath')`
+* Updated `README.md`
+
 ## 1.0.6 - 2018.01.20
 ### Added
 * Added `aliases` to `general.php` and `volumes.php`

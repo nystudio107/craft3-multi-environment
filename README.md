@@ -72,14 +72,12 @@ You will need to create an `.env.php` file for each environment on which your Cr
 
 It's recommended that the `example.env.php` **is** checked into your git repo, so others can use it for a guide when creating their own local `.env.php` file.
 
-### Aliases and environmentVariables
+### Custom environmentVariables
 
 Craft 3 does away with the notion of `environmentVariables`. If you have custom variables that you wish to set in a multi-environment way, put them in the `custom` array in `general.php`:
 
     // Custom site-specific config settings
     'custom' => [
-        'basePath' => getenv('CRAFTENV_BASE_PATH'),
-        'baseUrl' => getenv('CRAFTENV_BASE_URL'),
         'craftEnv' => CRAFT_ENVIRONMENT,
         'staticAssetsVersion' => 1,
     ]
@@ -87,6 +85,8 @@ Craft 3 does away with the notion of `environmentVariables`. If you have custom 
 The `custom` sub-array in the config setup is for any non-Craft defined config settings that you might want to include in `general.php`. Since Craft does a recursive merge on the config settings, you can change just the config settings you need on a per-environment basis.
 
 You can access these in your templates via `craft.config.general.custom.SETTING`.
+
+### Asset Volumes and Aliases
 
 For things like your `baseUrl` and `basePath` for assets, you can set [aliases](http://www.yiiframework.com/doc-2.0/guide-concept-aliases.html) in your `general.php`:
 
@@ -96,14 +96,20 @@ For things like your `baseUrl` and `basePath` for assets, you can set [aliases](
         '@baseUrl' => getenv('CRAFTENV_BASE_URL'),
     ],
 
-While this may seem to be duplicating what is in the `custom` array, aliases can be resolved in AdminCP settings like Asset Volumes, whereas settings in the `custom` array cannot.
+In your templates, Craft CMS 3 RC7 adds than `alias()` Twig function that you can use to resolve an alias, e.g.:
+
+    {{ alias('@baseUrl') }}
+    {{ alias('@baseUrl/assets/img/' }}
+    
+Aliases work for paths as well as URLs:
+
+    {{ alias('@basePath') }}
+    {{ alias('@basePath/assets/img/' }}
 
 There are also several preset aliases that you might find useful:
 
 * `@web` - the base URL of the current request
 * `@webroot` - the web root directory of the current request. It is determined based on the directory containing the entry script 
-
-### Asset Volumes
 
 These aliases can be used in sites’ Base URL settings, volumes’ Base URL settings, and Local volumes’ File System Path settings in the AdminCP.
 
