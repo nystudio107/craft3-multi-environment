@@ -45,8 +45,6 @@ return [
         ],
         // Custom site-specific config settings
         'custom' => [
-            'basePath' => getenv('CRAFTENV_BASE_PATH'),
-            'baseUrl' => getenv('CRAFTENV_BASE_URL'),
             'craftEnv' => CRAFT_ENVIRONMENT,
             'staticAssetsVersion' => 1,
         ]
