@@ -84,7 +84,7 @@ Craft 3 does away with the notion of `environmentVariables`. If you have custom 
 
 The `custom` sub-array in the config setup is for any non-Craft defined config settings that you might want to include in `general.php`. Since Craft does a recursive merge on the config settings, you can change just the config settings you need on a per-environment basis.
 
-You can access these in your templates via `craft.config.general.custom.SETTING`.
+You can access these in your templates via `craft.app.config.general.custom.SETTING`.
 
 ### Asset Volumes and Aliases
 
