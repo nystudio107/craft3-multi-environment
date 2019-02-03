@@ -58,6 +58,7 @@ return [
         'devMode' => false,
         'enableTemplateCaching' => true,
         'isSystemOn' => true,
+        'allowAdminChanges' => false,
         // Aliases parsed in sites’ settings, volumes’ settings, and Local volumes’ settings
         'aliases' => [
         ],
@@ -74,6 +75,7 @@ return [
         'devMode' => false,
         'enableTemplateCaching' => true,
         'isSystemOn' => false,
+        'allowAdminChanges' => false,
         // Aliases parsed in sites’ settings, volumes’ settings, and Local volumes’ settings
         'aliases' => [
         ],
