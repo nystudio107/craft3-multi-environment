@@ -38,6 +38,7 @@ return [
         'siteUrl' => getenv('CRAFTENV_SITE_URL'),
         'useEmailAsUsername' => true,
         'usePathInfo' => true,
+        'useProjectConfigFile' => true,
         // Aliases parsed in sites’ settings, volumes’ settings, and Local volumes’ settings
         'aliases' => [
             '@basePath' => getenv('CRAFTENV_BASE_PATH'),
